@@ -1,8 +1,8 @@
 package main
 
 import (
+	"html/template"
 	"path/filepath"
-	"text/template"
 	"time"
 
 	"github.com/amieldelatorre/lets-go/internal/models"

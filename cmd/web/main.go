@@ -3,10 +3,10 @@ package main
 import (
 	"database/sql"
 	"flag"
+	"html/template"
 	"log"
 	"net/http"
 	"os"
-	"text/template"
 
 	"github.com/amieldelatorre/lets-go/internal/models"
 	_ "github.com/go-sql-driver/mysql"
