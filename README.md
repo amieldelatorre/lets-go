@@ -2,6 +2,12 @@
 
 Based on the book [`Let's Go` by Alex Edwards](https://lets-go.alexedwards.net/).
 
+## Building 
+```bash
+go build -v -o ./build/web.exe ./cmd/web
+```
+
+## Notes
 - Go's file server sanitizes request paths by running them through the path.Clean() function which removes any "." and ".." elements to prevent directory traversal
 - Range requests are also fully supported
 - The Last-Modified and If-Modified-Since headers are transparently supported. If a file hasn’t changed since the user last requested it, then http.FileServer will send a 304 Not Modified status code instead of the file itself.
@@ -19,6 +25,13 @@ Based on the book [`Let's Go` by Alex Edwards](https://lets-go.alexedwards.net/)
 
 > We could redirect the stdout and stderr streams to on-disk files when starting the application
 > $ go run ./cmd/web >>/tmp/info.log 2>>/tmp/error.log
+
+
+## Stopping MySQL Server Runing Natively on Machine
+I may need to stop MySQL server first that is running directly from my machine.
+```ps
+net stop MySQL80
+```
 
 [^1]: Chapter 2.9 Requests are handled concurrently
 [^2]: Chapter 3.3 Closures for dependency injection https://gist.github.com/alexedwards/5cd712192b4831058b21
